@@ -1,0 +1,79 @@
+motor board
+:e1
+=205100
+
+CPR
+:a1
+=007869
+
+timer interrupp frec 1
+:b1
+=50C300
+
+hig speed ratio
+:g1
+=02
+
+CPR alt
+:a2
+=007869
+
+timer interrupp frec alt
+:b2
+=50C300
+
+hig speed ratio alt
+:g2
+=02
+
+support eq/az
+:q1010000
+=080000
+
+support eq/az
+:q2010000
+=080000 support eq/az
+
+status 
+:f1
+=101
+
+:f2
+=101
+autoguide 0.5
+:P12
+=
+autoguide 0.5 alt
+P22
+=
+
+get position
+:j1
+=000080
+
+getp position alt
+:j2
+=005E9A
+
+status
+:f1
+=101
+
+status alt
+:f2
+=101
+
+get position
+:j1
+i=000080
+
+get position alt
+:j2
+=005E9A
+
+
+
+stop motion
+:K1
+
+
