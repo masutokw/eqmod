@@ -3,6 +3,8 @@
 typedef uint32_t  uint32_t2[2];
 typedef int32_t  int32_t2[2];
 volatile uint32_t2  position;
+typedef bool boolt_2[2];
+boolt_2 track,sense,runing,block;
 uint32_t2 goto_target, goto_target_inc, brakep_inc, step_lg_period, step_period, brake_steps, cpr;
 int32_t2 dir = {1, 0};
 #include "skymotors.h"
@@ -67,8 +69,9 @@ void setup()
   if (udp_mode) udp_setup();
   pinMode(LED, OUTPUT);
   pinMode(D3, OUTPUT);
-  target[0] = 2000;
-  target[1] = 3000;
+  target[0] = 0x0004DB;
+  dir[0]=1;dir[1]=0;
+  target[1] = 0x0004DB;
   //Initialize Ticker every 0.5s
   timer1_attachInterrupt(onTimerISR);
   timer1_enable(TIM_DIV16, TIM_EDGE, TIM_LOOP);

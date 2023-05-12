@@ -2,7 +2,7 @@
 #include "skymotors.h"
 #include <Arduino.h>
 
-
+typedef bool boolt_2[2];
 typedef uint32_t  uint32_t2[2];
 typedef int32_t  int32_t2[2];
 extern uint32_t2 position, goto_target, goto_target_inc, brakep_inc, step_lg_period, step_period, brake_steps, cpr;
@@ -110,7 +110,8 @@ int start_motion(uint8_t axis) {
 }
 int stop_motion(uint8_t axis) {
   sprintf(response, "=\r");
- if (--axis==1){dir[axis]=0;target[1]=0x0004DB;}
+  axis--;
+ if (axis==1){dir[axis]=1;target[axis]=0x0004DB;}
  else{ dir[0]=1;target[0]=0x0004DB;}
  
   return 0;
