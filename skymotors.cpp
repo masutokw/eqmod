@@ -110,7 +110,8 @@ int start_motion(uint8_t axis) {
 }
 int stop_motion(uint8_t axis) {
   sprintf(response, "=\r");
- if (--axis==1)dir[axis]=0;else dir[0]=1;
+ if (--axis==1){dir[axis]=0;target[1]=0x0004DB;}
+ else{ dir[0]=1;target[0]=0x0004DB;}
  
   return 0;
 }

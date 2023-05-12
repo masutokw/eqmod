@@ -1,2 +1,2 @@
-#define STASSID "WIFIID"
-#define STAPSK  "wifipass"
+#define STASSID "OLGUIFIB"
+#define STAPSK  "elpalolaislacartagena"

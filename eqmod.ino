@@ -120,7 +120,7 @@ void loop()
     }
   } else {
     while (true) {
-    //  delay(50);
+     delay(30);
       udp_packet_len = Udp.parsePacket();
       if (udp_packet_len) {
 
@@ -134,7 +134,9 @@ void loop()
         Udp.beginPacket(Udp.remoteIP(), Udp.remotePort());
         Udp.write(response);
         Udp.endPacket();
-        Serial.println("");
+           Serial.println( "  ");
+        Serial.print( udp_packet_len);
+        Serial.print( "  ");
         Serial.print(udp_input_buffer);
         Serial.print("->  ");
         Serial.print(response);
