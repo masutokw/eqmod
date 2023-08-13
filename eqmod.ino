@@ -12,7 +12,11 @@ int32_t2 dir = {1, 0};
 volatile uint32_t2 counter, target;
 volatile uint64_t counter1;
 #define TIMER_FREC (1/5000000.0)*50.0
-#include "wifipass.h"
+#if __has_include("wifipass.h")
+#include "wifipass.h" //comment wifipass.h and uncomment for your  wifi parameters
+#else
+const char* ssid = "MyWIFI";
+const char* password = "Mypassword";
 
 #define LED 2  //On board LED
 #ifndef STASSID
